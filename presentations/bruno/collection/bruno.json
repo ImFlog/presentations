@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Parlons de Bruno",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

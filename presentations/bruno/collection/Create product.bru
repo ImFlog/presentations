@@ -1,0 +1,23 @@
+meta {
+  name: Create product
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{host}}/products
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "code": "prdt_02",
+    "name": "carottes",
+    "price": "1"
+  }
+}
+
+assert {
+  res.status: eq 200
+}
