@@ -1,0 +1,15 @@
+meta {
+  name: Delete product
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{host}}/products/prdt_02
+  body: json
+  auth: inherit
+}
+
+assert {
+  res.status: eq 201
+}

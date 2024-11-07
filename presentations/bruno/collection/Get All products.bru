@@ -1,0 +1,31 @@
+meta {
+  name: Get All products
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{host}}/products
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+}
+
+script:pre-request {
+  console.log("🎵 Ne parlons pas de Bruno 🎵")
+}
+
+script:post-response {
+  console.log("🎵 No, no, no, no 🎵")
+}
+
+tests {
+  test("should have more than one product", () => {
+    const data = res.getBody();
+    // Tests use the Chai assertion library
+    expect(data).to.have.lengthOf(1);
+  })
+}

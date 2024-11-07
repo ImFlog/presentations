@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: src
+    ports:
+      - "8080:8080"
+  mongo:
+    image: mongo:7
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    volumes:
+      - ./db_data/:/data/db/
+    ports:
+      - "27017:27017"

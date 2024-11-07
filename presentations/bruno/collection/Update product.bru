@@ -1,0 +1,23 @@
+meta {
+  name: Update product
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{host}}/products
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "code": "prdt_02",
+    "name": "carottes",
+    "price": "1.5"
+  }
+}
+
+assert {
+  res.status: eq 200
+}
